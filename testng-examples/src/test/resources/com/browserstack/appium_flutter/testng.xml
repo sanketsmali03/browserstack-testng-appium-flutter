@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Thread Count can be used to control the parallel threads on browserstack -->
+<suite name="test" thread-count="2" parallel="tests">
+    <test name="SampleTestAndroid">
+        <parameter name="device" value="Google Pixel 5"/>
+        <parameter name="os_version" value="11.0"/>
+        <parameter name="os" value="Android"/>
+        <classes>
+            <class name="com.browserstack.appium_flutter.SampleTest"/>
+        </classes>
+    </test>
+    <test name="SampleTestIOS">
+        <parameter name="device" value="iPhone 12"/>
+        <parameter name="os_version" value="14.0"/>
+        <parameter name="os" value="iOS"/>
+        <classes>
+            <class name="com.browserstack.appium_flutter.SampleTest"/>
+        </classes>
+    </test>
+    <!-- You can add more test combinations here -->
+</suite>

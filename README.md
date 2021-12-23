@@ -41,11 +41,13 @@ A sample response to the above API request is shown below :
     "app_url":"bs://f7c874f21852ba57957a3fdc33f47514288c4ba4"
 }
 ```
-Please note the value of app_url in the API response (bs://f7c874f21852.... in the above example). This value will be used later to set the app capability (in the [sample.conf.json](./android/testng-examples/src/test/resources/com/browserstack/appium_flutter/sample.conf.json) or as an environment variable => BROWSERSTACK_APP_ID) to specify application under test in your Appium test scripts.
+
+Please note the value of app_url in the API response (bs://f7c874f21852.... in the above example). This value will be used later to set the app capability (in the [sample.conf.json](./android/testng-examples/src/test/resources/com/browserstack/appium_flutter/sample.conf.json) or as an environment variable => BROWSERSTACK_ANDROID_APP_ID & BROWSERSTACK_IOS_APP_ID) to specify application under test in your Appium test scripts.
 ```json
 ...
 "capabilities": {
-    "app": "bs://f7c874f21852ba57957a3fdc33f47514288c4ba4",
+    "app_android": "bs://f7c874f21852ba57957a3fdc33f47514288c4ba4",
+    "app_ios":"bs://k7y874f21852ba57956a3fdc33f47514288c43a4"
   }
 ...
 ```
@@ -59,9 +61,7 @@ export BROWSERSTACK_USERNAME
 ```sh
 export BROWSERSTACK_ACCESS_KEY
 ```
-```sh
-export BROWSERSTACK_APP_ID
-```
+
 
 Or,
 
@@ -73,7 +73,9 @@ You can set these values in your sample.conf.json
 ...
 ```
 
-3. Finally, run your [sample.testng.xml file](./android/testng-examples/src/test/resources/com/browserstack/appium_flutter/sample.testng.xml), which  contains the tests that need to be run along with the device and os_version for the devices you want to test on
+
+3. Finally, run your [testng.xml file](./android/testng-examples/src/test/resources/com/browserstack/appium_flutter/sample.testng.xml), which  contains the tests that need to be run along with the device and os_version for the devices you want to test on
+
 
 **Note**: For other test frameworks supported by App-Automate refer our [Developer documentation](https://www.browserstack.com/docs/)
 
