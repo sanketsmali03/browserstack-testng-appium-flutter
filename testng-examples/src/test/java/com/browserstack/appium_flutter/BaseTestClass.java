@@ -71,7 +71,7 @@ public class BaseTestClass {
         }
 
         driver = new AndroidDriver<MobileElement>(
-                new URL(config.get("server") + "/wd/hub"),
+                new URL("https://" + config.get("server") + "/wd/hub"),
                 capabilities);
         find = new FlutterFinder(driver);
     }
